@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF806AF6-9008-480C-A394-B4E10688EB78}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Net4</RootNamespace>
+    <AssemblyName>Net4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ACCOUNT_BLL.cs" />
+    <Compile Include="BLL\GAME_BLL.cs" />
+    <Compile Include="BLL\NEWS_BLL.cs" />
+    <Compile Include="BLL\PRODUCT_BLL.cs" />
+    <Compile Include="DAL\ACCOUNT_DAL.cs" />
+    <Compile Include="DAL\GAME_DAL.cs" />
+    <Compile Include="DAL\NEWS_DAL.cs" />
+    <Compile Include="DAL\PRODUCT_DAL.cs" />
+    <Compile Include="GUI\ADDCART.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ADDCART.Designer.cs">
+      <DependentUpon>ADDCART.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BTDRINK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BTDRINK.Designer.cs">
+      <DependentUpon>BTDRINK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BTNHOME.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BTNHOME.Designer.cs">
+      <DependentUpon>BTNHOME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CARTITEM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CARTITEM.Designer.cs">
+      <DependentUpon>CARTITEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Class1.cs" />
+    <Compile Include="DTO\Connection.cs" />
+    <Compile Include="DTO\customer.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\game.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\game_category.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\news.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\product.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\product_category.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\user.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\user_role.cs">
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\VTH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VTH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\VTH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VTH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\VTH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VTH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ENTERTAINS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ENTERTAINS.Designer.cs">
+      <DependentUpon>ENTERTAINS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FEEDBACK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\FEEDBACK.Designer.cs">
+      <DependentUpon>FEEDBACK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GAMES.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GAMES.Designer.cs">
+      <DependentUpon>GAMES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameMenu.Designer.cs">
+      <DependentUpon>GameMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LISTDRINK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\LISTDRINK.Designer.cs">
+      <DependentUpon>LISTDRINK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LockScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LockScreen.Designer.cs">
+      <DependentUpon>LockScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MANAGE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\MANAGE.Designer.cs">
+      <DependentUpon>MANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Modify.cs" />
+    <Compile Include="DTO\MoneyAcception.cs" />
+    <Compile Include="GUI\NEWSS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NEWSS.Designer.cs">
+      <DependentUpon>NEWSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OptRecharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OptRecharge.Designer.cs">
+      <DependentUpon>OptRecharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PRIVATENEWS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\PRIVATENEWS.Designer.cs">
+      <DependentUpon>PRIVATENEWS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GUI\PUBLICNEWS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\PUBLICNEWS.Designer.cs">
+      <DependentUpon>PUBLICNEWS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RESETPASS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RESETPASS.Designer.cs">
+      <DependentUpon>RESETPASS.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\ADDCART.resx">
+      <DependentUpon>ADDCART.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BTDRINK.resx">
+      <DependentUpon>BTDRINK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BTNHOME.resx">
+      <DependentUpon>BTNHOME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CARTITEM.resx">
+      <DependentUpon>CARTITEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ENTERTAINS.resx">
+      <DependentUpon>ENTERTAINS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FEEDBACK.resx">
+      <DependentUpon>FEEDBACK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GAMES.resx">
+      <DependentUpon>GAMES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameMenu.resx">
+      <DependentUpon>GameMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LISTDRINK.resx">
+      <DependentUpon>LISTDRINK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LockScreen.resx">
+      <DependentUpon>LockScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MANAGE.resx">
+      <DependentUpon>MANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NEWSS.resx">
+      <DependentUpon>NEWSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OptRecharge.resx">
+      <DependentUpon>OptRecharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PRIVATENEWS.resx">
+      <DependentUpon>PRIVATENEWS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PUBLICNEWS.resx">
+      <DependentUpon>PUBLICNEWS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RESETPASS.resx">
+      <DependentUpon>RESETPASS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DTO\VTH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VTH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DTO\VTH.edmx.diagram">
+      <DependentUpon>VTH.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4561977.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_471002062_tCBbTqeeMhHgMfCW86mQhdgpETooy3ID.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game-controller-icon-png-101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-service-icon-7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-account-management-logo-user-icon-11562867145a56rus2zwu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-logout-icon-png-image_1023261.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arhimicrostok170800522.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-white-and-blue-message-icon-illustration-email-computer-icons-symbol-message-inbox-by-gmail-envelope-miscellaneous-blue-angle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngkey.com-space-icon-png-45732391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\razer-wallpapers-page-hero-mobile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\332483050_129147629884349_6945887301268422366_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-power-off-button-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-alarm-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-drink-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cherry-cheesecake-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cheesecake-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-us-dollar-circled-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chat-message-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bell-65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eb3364836900e5d9f854fdaa9e5f4c091.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00293.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shopping-cart-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-question-mark-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-mark-icon-png-11552242874yprntn7fkf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-man-with-a-clock-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-database-administrator-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-game-controller-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-page-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hamburger-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hamburger-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-money-bag-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-facebook-messenger-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-facebook-messenger-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-comments-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-milkshake-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-homeadvisor-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-homeadvisor-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gyugyug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manhinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manhinh2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spotify-logo-white-green-background %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2503g1SpxesFFnDuykVTeapgYbSY1mJfgqUryAmI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitch tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-_2_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-_3_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\channels4_profile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jihed-mhedhbi-80-roomgiiiifffff.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient-wallpaper-background_1159-5356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2683cae3-0ae4-4bc0-8f84-0b3644244761-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-select-all-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wi-fi-connected-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wi-fi-disconnected-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2683cae3-0ae4-4bc0-8f84-0b3644244761-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-online-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-offline-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tools-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-online-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-offline-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoL_icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-likee-ap-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-tuyen-dung-dep-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-thong-bao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-banner-hd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gaming Banner For Youtube.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-commercial-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patch_notes_13-8_Banners.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Studio_Project %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-subtract-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimize-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DTO\VTH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VTH.edmx</DependentUpon>
+      <LastGenOutput>VTH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DTO\VTH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VTH.edmx</DependentUpon>
+      <LastGenOutput>VTH.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
